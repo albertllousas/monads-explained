@@ -453,7 +453,7 @@ Monads allow you to compose small operations to create workflows and achieve big
 Remember what we said about functional programming at the very beginning? **In FP is all about make programs by
 composing functions**.
 
-So, this is what monads do, compose functions, chain functions, combine them to create other functions.
+So, this is what monads do, compose functions, chain functions, combine them to create workflows.
 
 > Show it to me
 
@@ -487,7 +487,7 @@ val account = Account.create(100.toBigDecimal())
 // account = Left(value=NotEnoughFunds)
 ```
 
-> Meh!, okish ... but could you show me how we can use it in my fancy real application? 
+> Meh!, okayish ... but could you show me how we can use it in my fancy real application? 
 
 Sure, let's create some application Services/Use-Cases.
 
