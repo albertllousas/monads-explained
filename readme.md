@@ -420,10 +420,10 @@ once you get it, you can use monads without struggling and guessing types.
 > Ok, any tip? suggestion?
 
 Yes, think in types, never in what the monad is doing under the hood (implementation), then if you have any value
-wrapped in a monad such as `val value = Either<A,B>`, if you apply a fn:
+wrapped in a monad such as `val value = SomeMonad<A,B>`, if you apply a fn:
 
 - If fn goes from `A -> B` apply `map`
-- If fn goes from `A -> Either<A, C>` apply `flatmap`
+- If fn goes from `A -> SomeMonad<C>` apply `flatmap`
 
 > Got it!
 
