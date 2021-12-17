@@ -1,15 +1,27 @@
 # Monads for humans
 
-This is just another try to explain monads, I am not a functional expert and maybe some the assumptions are not totally
-accurate from mathematical perspective, but, again, just trying to explain this useful pattern for imperative minds.
+Monads, I don't know if your heard about them, if you didn't please keep reading, if you already know about them please 
+don't give up and keep reading as well.
 
-Why I am, doing this?
+The term 'monad' itself is weird but if you google it is even worse, you will be overflowed by a lot of cryptic blogs of 
+functional programming trying to explain them or just being arrogant to show how smart-asses they are and how stupid you are.
 
-face it, try to understand it wa soo hard
+Well, this is just another one, the difference, I am not a functional expert, just one simple engineer trying to make the 
+suffering less painful when it comes to monads. 
 
-Are you interested?
+Why I am doing this? During my career I've been always to learn new things, and one of them is functional programming, when 
+you try to learn it there is a point that you face this cary term, monads, and I have had two challenges:
+1. Understand what a monad is
+2. Explain what a Monad is
+
+TBH, I think I will never be successful in any of them, but I least I will try.
+
+Having said that, are you interested?
 
 > You got my attention! I want to learn more!
+
+Note: Maybe some the assumptions are not totally accurate from either mathematical or funtional perspective, but, again, 
+I am just trying to explain this useful pattern for non-functional-experts.
 
 ## First things first: Some theory
 
@@ -19,9 +31,10 @@ details with a more complex topic like Monads.
 ### What is a function?
 
 - In mathematics, a function is a relationship between two sets of numbers, where every element of one corresponds to
-  the other. diagram
+  the other. 
+  <diagram-here>
 - In programming, a function is a relationship between two types (set of different values)
-  diagram
+  <diagram-here>
 
 ### What is FP?
 
@@ -112,7 +125,7 @@ For our exercise we are going to use one of the most useful ones, the `Either` m
 
 - Nnemonic: "right" also means "success/correct/good".
 
-diagram
+<diagram-here>
 
 ### A monad is a type in a context
 
@@ -196,7 +209,7 @@ Basically, a functor is a type that have a mapped over with basically one functi
 
 `fmap: f a -> (a -> b) -> f b` also known as `map`
 
-diagram
+<diagram-here>
 
 > Functor? fmap? Do I have an arrogant haskeller face?
 
@@ -299,12 +312,12 @@ Monads define two functions:
 - One to wrap a value in a monad:
 
   `return:  a -> m a` also called `unit`
-  diagram
+  <diagram-here>
 
 - Another to compose together functions that output monads:
 
   `bind : m a -> (m -> m b) -> m b` also known as `flatmap`
-  diagram
+  <diagram-here>
 
 > What the f****? Please, explain this before I leave
 
