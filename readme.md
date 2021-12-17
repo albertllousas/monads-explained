@@ -9,8 +9,12 @@ functional programming trying to explain them or just being arrogant to show how
 Well, this is just another one, the difference, I am not a functional expert, just one simple engineer trying to make the 
 suffering less painful when it comes to monads. 
 
-Why I am doing this? During my career I've been always to learn new things, and one of them is functional programming, when 
-you try to learn it there is a point that you face this cary term, monads, and I have had two challenges:
+Why I am doing this? During my career I've been always trying to keep-up to date but also learn new things, and one of them 
+was functional programming, and trust me, when you try to learn it there is a point that you face this scary term, yes, monads.
+First reaction? Cool a new thing with a cool name... (after some minutes) ... mmmh, this is abstract ... (after some hours) ... 
+this is really hard ... (after weeks) ... I think I am getting it ... (after months) ... Ok, let's start over.
+
+I don't know if you had the same experience but for me it's been challenging in two ways:
 1. Understand what a monad is
 2. Explain what a Monad is
 
