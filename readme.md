@@ -139,6 +139,8 @@ Monads work with a type in a context, where context is a generic container that 
 - Is parameterised
 - The context matters, is semantic, gives some form of quality to the underlying type.
 
+<diagram-here>
+
 And here a very basic implementation:
 
 ```kotlin
@@ -198,7 +200,7 @@ Well:
 1. Documentation: not clean, code should be self-explanatory, and also if you pass the function around as a lambda you
    loose it.
 2. Check the implementation: Really? Not clean, a consumer should not know about the implementation details.
-3. Sure, come back to java were you can type it with `throws NegativeAmountException`, only one problem, since your
+3. Sure, come back to java where you can type it with `throws NegativeAmountException`, only one problem, since your
    method is throwing exceptions you can not pass the function around, bye bye High-Order-Functions.
 
 > Ok, fine, you got me bro
