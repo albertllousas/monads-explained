@@ -144,7 +144,7 @@ Monads work with a type in a context, where context is a generic container that 
 - The context matters, is semantic, gives some form of quality to the underlying type.
 
 <p align="center">
-  <img width="30%" src="./img/monad-wrapper.png">
+  <img width="10%" src="./img/monad-wrapper.png">
 </p>
 
 And here a very basic implementation:
