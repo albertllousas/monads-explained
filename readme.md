@@ -212,7 +212,8 @@ Well:
    will lose it.
 2. Check the implementation: Really? Not clean, a consumer should not know about the implementation details.
 3. Sure, come back to java where you can type it with `throws NegativeAmountException`, only one problem, since your
-   method is throwing exceptions you can not pass the function around, bye bye High-Order-Functions.
+   method is throwing checked exceptions you can not pass the function around, bye bye High-Order-Functions. Maybe you
+   can find a workaround to pass it, yeah, just a workaround.
 
 > Ok, fine, you got me bro
 
@@ -226,7 +227,9 @@ Basically, a functor is a type that have a mapped over with basically one functi
 
 `fmap: f a -> (a -> b) -> f b` also known as `map`
 
-<diagram-here>
+<p align="center">
+  <img width="50%" src="./img/map.png">
+</p>
 
 > Functor? fmap? Do I have an arrogant haskeller face?
 
