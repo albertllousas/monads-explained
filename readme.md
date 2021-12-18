@@ -51,11 +51,12 @@ instead of Imperative Programming, which is based in [Von Neumann](https://en.wi
 
 Related concepts:
 
-- First class and High Order Functions
-- Pure functions and Referential Transparency
+- Functions are first class citizens
+- High Order Functions
+- Pure, total functions and Referential Transparency
 - Recursion
 - Non-strict Evaluation
-- ADTs
+- Algebraic Data Types
 - Immutability
 - Side effects
 - Declarative Programming
@@ -122,13 +123,15 @@ A monad is a functional design pattern that solves recurrent problems such as:
 
 #### Either Monad
 
-For our exercise we are going to use one of the most useful ones, the `Either` monad, to handle our errors:
+For our exercise we are going to use one of the most useful ones, the `Either` monad (can have different name, for 
+instance F# has `Result` type, in Golang it's a part of the syntax when function is obliged to return 2 results, etc.), 
+to handle our errors:
 
 - `Either` type represents values with two possibilities, either `Left` or `Right`
 
 - Convention dictates that `Left` is used for `failure` and `Right` is used for `success`.
 
-- Nnemonic: "right" also means "success/correct/good".
+- Mnemonic: "right" also means "success/correct/good".
 
 <p align="center">
   <img width="50%" src="./img/either.png">
@@ -413,7 +416,7 @@ We are applying a fn that wraps into a context to an already wrapped context.
 </p>
 
 
-Guess what,`flatmap` fix this:
+Guess what,`flatmap` fixes this:
 
 ```kotlin
 sealed class Either<out A, out B> {
@@ -501,7 +504,7 @@ sealed class AccountError {
 }
 ```
 
-Scenario 1: Jane wants to open an account with 100, afterwards she will deposit 100 and finally withdraw 150, therefore
+Scenario 1: Jane wants to open an account with 100, afterwards she will deposit 100 and finally withdraw 250, therefore
 an error should pop-up, because Jane has not enough funds.
 
 ```kotlin
