@@ -14,7 +14,7 @@ was functional programming, and trust me, when you try to learn it there is a po
 First reaction? Cool a new thing with a cool name... (after some minutes) ... mmmh, this is abstract ... (after some hours) ... 
 this is really hard ... (after weeks) ... I think I am getting it ... (after months) ... Ok, let's start over.
 
-I don't know if you had the same experience but to me, it's been challenging in two ways:
+I don't know if you have had the same experience, but to me, it's been challenging in two ways:
 1. Understand what a monad is
 2. Explain what a Monad is
 
