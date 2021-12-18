@@ -334,7 +334,7 @@ Monads define two functions:
   `return:  a -> m a` also called `unit`
 
 <p align="center">
-  <img width="50%" src="img/unit-diagram.png">
+  <img width="30%" src="img/unit-diagram.png">
 </p>
 
 - Another to compose together functions that output monads:
