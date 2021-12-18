@@ -228,7 +228,7 @@ Basically, a functor is a type that have a mapped over with basically one functi
 `fmap: f a -> (a -> b) -> f b` also known as `map`
 
 <p align="center">
-  <img width="50%" src="./img/map.png">
+  <img width="50%" src="img/map-diagram.png">
 </p>
 
 > Functor? fmap? Do I have an arrogant haskeller face?
@@ -334,7 +334,7 @@ Monads define two functions:
   `return:  a -> m a` also called `unit`
 
 <p align="center">
-  <img width="50%" src="./img/unit.png">
+  <img width="50%" src="img/unit-diagram.png">
 </p>
 
 - Another to compose together functions that output monads:
@@ -342,7 +342,7 @@ Monads define two functions:
   `bind : m a -> (a -> m b) -> m b` also known as `flatmap`
 
 <p align="center">
-  <img width="50%" src="./img/flatmap.png">
+  <img width="50%" src="img/flatmap-diagram.png">
 </p>
 
 > What the f****? Please, why I would even need these functions? explain this before I leave!
@@ -409,7 +409,7 @@ Remember `map` is a function that maps type `A` to type `B`, in our case, the fu
 We are applying a fn that wraps into a context to an already wrapped context.
 
 <p align="center">
-  <img width="50%" src="./img/map-inception.png">
+  <img width="50%" src="img/map-inception-diagram.png">
 </p>
 
 
