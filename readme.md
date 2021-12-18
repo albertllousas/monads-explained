@@ -196,7 +196,7 @@ Amazing 😍, isn't it?
 
 Are you sure? The same signature with exceptions:
 
-`Acount.create(initialBalance: BigDecimal): Account`
+`Account.create(initialBalance: BigDecimal): Account`
 
 What can go wrong? Nothing, no signals of errors ... a consumer can happily use it without knowing that it can actually
 fail, this is a **hidden flow**.
@@ -280,7 +280,7 @@ object NegativeAmount
 Now let's try to add money
 
 ```kotlin
- val account = Acount.create(100.toBigDecimal())
+ val account = Account.create(100.toBigDecimal())
 when (account) {
     is Either.Right -> account.value.deposit(100.toBigDecimal())
     is Either.Left -> TODO() // now what?
@@ -306,13 +306,13 @@ sealed class Either<out A, out B> {
 And ...
 
 ```kotlin
-val account = Acount.create(100.toBigDecimal())
+val account = Account.create(100.toBigDecimal())
     .map { a -> a.deposit(100.toBigDecimal()) }
 ```
 
 Boom! Cool, right?
 
-> But then, what if `Acount.create` returns an error?
+> But then, what if `Account.create` returns an error?
 
 Our `map` is semantically attached to the type of the monad, in our case to the `Either` monad, it will only apply
 the `fn` if we have a `Right`, otherwise the function will be just ignored, our monad is right biased.
@@ -332,14 +332,20 @@ Monads define two functions:
 - One to wrap a value in a monad:
 
   `return:  a -> m a` also called `unit`
-  <diagram-here>
+
+<p align="center">
+  <img width="50%" src="./img/unit.png">
+</p>
 
 - Another to compose together functions that output monads:
 
-  `bind : m a -> (m -> m b) -> m b` also known as `flatmap`
-  <diagram-here>
+  `bind : m a -> (a -> m b) -> m b` also known as `flatmap`
 
-> What the f****? Please, explain this before I leave
+<p align="center">
+  <img width="50%" src="./img/flatmap.png">
+</p>
+
+> What the f****? Please, why I would even need these functions? explain this before I leave!
 
 Take it easy, I am going to do it
 
@@ -378,7 +384,7 @@ context.
 Now, it's time to deposit money again:
 
 ```kotlin
-val account = Acount.create(100.toBigDecimal())
+val account = Account.create(100.toBigDecimal())
     .map { a -> a.deposit(100.toBigDecimal()) }
 ```
 
@@ -389,19 +395,23 @@ And the tricky question. Could you tell me the type inferred into the val accoun
 Nope, the type is:
 
 ```kotlin
-val account: Either<NegativeAmount, Either<NegativeAmount, Account>> = Acount.create(100.toBigDecimal())
+val account: Either<NegativeAmount, Either<NegativeAmount, Account>> = Account.create(100.toBigDecimal())
     .map { a -> a.deposit(100.toBigDecimal()) }
 ```
 
 > 🤯, either inception!
 
-Remember `map` a function with type `f a -> (a -> b) -> f b`:
+Remember `map` is a function that maps type `A` to type `B`, in our case, the function `deposit(A):B`:
 
-```
-f a -> (a -> b) -> f b
-Acount.create(100) -> ({a -> a.deposit(100)}) -> account  
-Either<NegativeAmount, Account> -> (Account -> Either<NegativeAmount, Account>) -> Either<NegativeAmount, Either<NegativeAmount, Account>>  
-```
+- `A`: BigDecimal type
+- `B`: Either<NegativeAmount, Account>
+
+We are applying a fn that wraps into a context to an already wrapped context.
+
+<p align="center">
+  <img width="50%" src="./img/map-inception.png">
+</p>
+
 
 Guess what,`flatmap` fix this:
 
@@ -424,7 +434,7 @@ sealed class Either<out A, out B> {
 And finally:
 
 ```kotlin
-val account: Either<NegativeAmount, Account> = Acount.create(100.toBigDecimal())
+val account: Either<NegativeAmount, Account> = Account.create(100.toBigDecimal())
     .flatMap { a -> a.deposit(100.toBigDecimal()) }
 ```
 
