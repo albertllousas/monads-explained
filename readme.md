@@ -131,7 +131,9 @@ For our exercise we are going to use one of the most useful ones, the `Either` m
 
 - Nnemonic: "right" also means "success/correct/good".
 
-<diagram-here>
+<p align="center">
+  <img width="70%" src="./img/either.png">
+</p>
 
 ### A monad is a type in a context
 
