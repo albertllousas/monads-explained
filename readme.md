@@ -39,7 +39,7 @@ the other. Based in that definition, in programming a function is a relationship
 of values. 
 
 <p align="center">
-  <img width="50%" src="./img/function.png">
+  <img width="70%" src="./img/function.png">
 </p>
 
 ### What is FP?
