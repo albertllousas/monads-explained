@@ -34,11 +34,12 @@ details with a more complex topic like Monads.
 
 ### What is a function?
 
-A function is a relationship between two sets of numbers data, where each element of one corresponds to one element of 
-the other. Then a fn could be understood as a relationship between two types, since a data type is a set of values. 
+In mathematics a function is a relationship between two sets of data, where each element of one corresponds to one element of 
+the other. Based in that definition, in programming a function is a relationship between two types, since a data type is a set 
+of values. 
 
 <p align="center">
-  <img width="100%" src="./img/fn.png">
+  <img width="50%" src="./img/fn.png">
 </p>
 
 ### What is FP?
