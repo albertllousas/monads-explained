@@ -38,7 +38,7 @@ A function is a relationship between two sets of numbers data, where each elemen
 the other. Then a fn could be understood as a relationship between two types, since a data type is a set of values. 
 
 <p align="center">
-  <img width="100%" src="./fn.png">
+  <img width="100%" src="./img/fn.png">
 </p>
 
 ### What is FP?
