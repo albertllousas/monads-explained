@@ -144,7 +144,7 @@ Monads work with a type in a context, where context is a generic container that 
 - The context matters, is semantic, gives some form of quality to the underlying type.
 
 <p align="center">
-  <img width="50%" src="./img/monad-wrapper.png">
+  <img width="30%" src="./img/monad-wrapper.png">
 </p>
 
 And here a very basic implementation:
@@ -157,7 +157,7 @@ sealed class Either<out A, out B> {
 ```
 
 <p align="center">
-  <img width="50%" src="./img/either-2.png">
+  <img width="40%" src="./img/either-2.png">
 </p>
 
 > Bla bla bla, so boring, show me something real
