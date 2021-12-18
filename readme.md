@@ -123,7 +123,7 @@ A monad is a functional design pattern that solves recurrent problems such as:
 
 #### Either Monad
 
-For our exercise we are going to use one of the most useful ones, the `Either` monad (can have different name, for 
+For our exercise we are going to use one of the most useful ones, the `Either` monad (can have different names, for 
 instance F# has `Result` type, in Golang it's a part of the syntax when function is obliged to return 2 results, etc.), 
 to handle our errors:
 
@@ -416,7 +416,7 @@ We are applying a fn that wraps into a context to an already wrapped context.
 </p>
 
 
-Guess what,`flatmap` fixes this:
+Guess what,`flatmap` fixes this, because it expects a function that wraps again, fixing the wrap mess for you:
 
 ```kotlin
 sealed class Either<out A, out B> {
@@ -504,7 +504,7 @@ sealed class AccountError {
 }
 ```
 
-Scenario 1: Jane wants to open an account with 100, afterwards she will deposit 100 and finally withdraw 250, therefore
+**Scenario 1**: Jane wants to open an account with 100, afterwards she will deposit 100 and finally withdraw 250, therefore
 an error should pop-up, because Jane has not enough funds.
 
 ```kotlin
@@ -518,7 +518,7 @@ val account = Account.create(100.toBigDecimal())
 
 Sure, let's create some application Services/Use-Cases.
 
-Scenario 2: We want to create a service to transfer money within two different accounts:
+**Scenario 2**: We want to create a service to transfer money within two different accounts:
 
 ```kotlin
 class TransferMoney {
@@ -529,7 +529,7 @@ class TransferMoney {
 }
 ```
 
-Scenario 3: We want to get an account from a repository, add some cash, and save it back with the new state.
+**Scenario 3**: We want to get an account from a repository, add some cash, and save it back with the new state.
 
 ```kotlin
 interface AccountRepository {
