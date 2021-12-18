@@ -6,7 +6,7 @@ don't give up and keep reading as well.
 The term 'monad' itself is weird but if you google it is even worse, you will be overflowed by a lot of cryptic blogs of 
 functional programming trying to explain them or just being arrogant to show how smart-asses they are and how stupid you are.
 
-Well, this is just another one, the difference, I am not a functional expert, just one simple engineer trying to make the 
+Well, this is just another one, the difference, I am not a functional expert, just a simple engineer trying to make the 
 suffering less painful when it comes to monads. 
 
 Why I am doing this? During my career I've been always trying to keep-up to date but also learn new things, and one of them 
@@ -14,11 +14,11 @@ was functional programming, and trust me, when you try to learn it there is a po
 First reaction? Cool a new thing with a cool name... (after some minutes) ... mmmh, this is abstract ... (after some hours) ... 
 this is really hard ... (after weeks) ... I think I am getting it ... (after months) ... Ok, let's start over.
 
-I don't know if you had the same experience but for me it's been challenging in two ways:
+I don't know if you had the same experience but to me, it's been challenging in two ways:
 1. Understand what a monad is
 2. Explain what a Monad is
 
-TBH, I think I will never be successful in any of them, but I least I will try.
+TBH, I think I will never be successful in any of them, but I least I will try 🤘.
 
 Having said that, are you interested?
 
@@ -35,7 +35,7 @@ details with a more complex topic like Monads.
 ### What is a function?
 
 In mathematics a function is a relationship between two sets of data, where each element of one corresponds to one element of 
-the other. Based in that definition, in programming a function is a relationship between two types, since a data type is a set 
+the other. Based in that definition, in programming a function is a **relationship between two types**, since a data type is a set 
 of values. 
 
 <p align="center">
@@ -47,8 +47,7 @@ of values.
 Is a functional programming paradigm where programs are made composing functions.
 
 Functional Programming is based in [λ-calculus](https://en.wikipedia.org/wiki/Lambda_calculus) (compose and transform)
-instead of Imperative Programming, which is based
-in [Von Neumann](https://en.wikipedia.org/wiki/Von_Neumann_architecture) models (change state).
+instead of Imperative Programming, which is based in [Von Neumann](https://en.wikipedia.org/wiki/Von_Neumann_architecture) models (mutate state).
 
 Related concepts:
 
@@ -187,7 +186,9 @@ The code from consumer perspective looks like this:
 
 If we try to read it like a text, what is this signature telling us?
 
-`This creates an account with an initial balance, it can either fail because the amount was negative or success`
+```text
+This creates an account with an initial balance, it can either fail because the amount was negative or success
+```
 
 Amazing 😍, isn't it?
 
@@ -208,7 +209,7 @@ fail, this is a **hidden flow**.
 Well:
 
 1. Documentation: not clean, code should be self-explanatory, and also if you pass the function around as a lambda you
-   loose it.
+   will lose it.
 2. Check the implementation: Really? Not clean, a consumer should not know about the implementation details.
 3. Sure, come back to java where you can type it with `throws NegativeAmountException`, only one problem, since your
    method is throwing exceptions you can not pass the function around, bye bye High-Order-Functions.
