@@ -1,6 +1,6 @@
 # Monads for humans
 
-Monads, I don't know if your heard about them, if you didn't please keep reading, if you already know about them please 
+Monads, I don't know if you heard about them, if you didn't please keep reading, if you already know about them please 
 don't give up and keep reading as well.
 
 The term 'monad' itself is weird but if you google it is even worse, you will be overflowed by a lot of cryptic blogs of 
