@@ -143,7 +143,9 @@ Monads work with a type in a context, where context is a generic container that 
 - Is parameterised
 - The context matters, is semantic, gives some form of quality to the underlying type.
 
-<diagram-here>
+<p align="center">
+  <img width="50%" src="./img/monad-wrapper.png">
+</p>
 
 And here a very basic implementation:
 
@@ -153,6 +155,10 @@ sealed class Either<out A, out B> {
     data class Right<B>(val value: B) : Either<Nothing, B>()
 }
 ```
+
+<p align="center">
+  <img width="50%" src="./img/either-2.png">
+</p>
 
 > Bla bla bla, so boring, show me something real
 
