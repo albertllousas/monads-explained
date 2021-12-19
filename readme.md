@@ -1,4 +1,4 @@
-# Monads for humans
+# Monads explained in Kotlin
 
 Monads, I don't know if you heard about them, if you didn't please keep reading, if you already know about them please 
 don't give up and keep reading as well.
@@ -24,7 +24,7 @@ Having said that, are you interested?
 
 > You got my attention! I want to learn more!
 
-Note: Maybe some the assumptions are not totally accurate from either mathematical or funtional perspective, but, again, 
+Note: Maybe some the assumptions are not totally accurate from either mathematical or functional perspective, but, again, 
 I am just trying to explain this useful pattern for non-functional-experts.
 
 ## First things first: Some theory
@@ -47,13 +47,13 @@ of values.
 Is a functional programming paradigm where programs are made composing functions.
 
 Functional Programming is based in [λ-calculus](https://en.wikipedia.org/wiki/Lambda_calculus) (compose and transform)
-instead of Imperative Programming, which is based in [Von Neumann](https://en.wikipedia.org/wiki/Von_Neumann_architecture) models (mutate state).
+instead of Imperative Programming, which is based in [Von Neumann](https://www2.seas.gwu.edu/~rhyspj/spring11cs3221/lab6/lab61.html#:~:text=Such%20languages%20are%20called%20von,be%20calculated%20by%20the%20CPU.) (mutate state).
 
 Related concepts:
 
 - Functions are first class citizens
 - High Order Functions
-- Pure, total functions and Referential Transparency
+- Pure functions and Referential Transparency
 - Recursion
 - Non-strict Evaluation
 - Algebraic Data Types
@@ -67,7 +67,7 @@ FP adds a different way of thinking about problem-solving.
 
 > I had enough, please, explain the topic
 
-One thing more before jump into monads: Let's use a real problem
+One thing more before jump into monads: Let's use a real and practical problem to guide us through.
 
 ## The Bank Account
 
@@ -90,13 +90,14 @@ them with monads.
 There is a lot of discussions and strong opinions around this topic over the net, to me is really easy, given an error:
 
 - Is it a crash? Then let it crash, let the exception fly, they are exceptional cases. Errors that you don't
-  create/control, that come from other libs, frameworks, external resources, deal with them outside your domain.
+  create/control, that come from other libs, frameworks, external resources, deal with them outside your domain, at the 
+  boundary of you program.
 - Is it an error that you control? Then use another error handling mechanism.
 
-Why?
+> Why would be bad to use exceptions for my own errors?
 
 - In almost all the languages exceptions hide non-happy case flows, you can not type them in the function signatures,
-  therefore, from client perspective you can not even notice and deal with them.
+  therefore, from client perspective you can not even notice and deal properly with them.
 - Using exceptions you are not forced to face your own errors, you can easily let it crash, delegating the control of
   the flow to someone else.
 - They can be expensive in terms of performance.
