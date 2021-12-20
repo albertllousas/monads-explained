@@ -1,7 +1,6 @@
 # Monads explained in Kotlin
 
-Monads, I don't know if you heard about them, if you didn't please keep reading, if you already know about them please 
-don't give up and keep reading as well.
+Monads, I don't know if you heard about them, if not please keep reading, if yes, please don't give up and keep reading as well.
 
 The term 'monad' itself is weird but if you google it is even worse, you will be overflowed by a lot of cryptic blogs of 
 functional programming trying to explain them or just being arrogant to show how smart-asses they are and how stupid you are.
@@ -219,7 +218,7 @@ Well:
    method is throwing checked exceptions you can not pass the function around, bye bye High-Order-Functions. Maybe you
    can find a workaround to pass it, yeah, just a workaround.
 
-> Ok, fine, you got me bro
+> Ok, fine, you got me 
 
 ### A monad can be mapped over.
 
@@ -478,7 +477,7 @@ Monads allow you to compose small operations to create workflows and achieve big
 
 > This statement seems broad and ambiguous to me
 
-Remember what we said about functional programming at the very beginning? **In FP is all about make programs by
+Remember what we said about functional programming at the very beginning? **FP is all about make programs by
 composing functions**.
 
 So, this is what monads do, compose functions, chain functions, combine them to create workflows.
@@ -519,7 +518,7 @@ val account = Account.create(100.toBigDecimal())
 
 Sure, let's create some application Services/Use-Cases.
 
-**Scenario 2**: We want to create a service to transfer money within two different accounts:
+**Scenario 2**: We want to create a service to transfer money within two different accounts.
 
 ```kotlin
 class TransferMoney {
