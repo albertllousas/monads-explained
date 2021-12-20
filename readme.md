@@ -113,13 +113,13 @@ we have the famous GOF - Gang of Four patterns (Singleton, Adapter, Decorator, S
 
 A monad is a functional design pattern that solves recurrent problems such as:
 
-- Nullability - Maybe/Option
-- **Error Handling - Either**
-- DI (Dependency Injection) - Reader
-- Logging - Writer
-- Side Effects - IO
-- State handling - State
-- Iterable - List
+- Nullability - Maybe/Option monad
+- **Error Handling - Either monad**
+- DI (Dependency Injection) - Reader monad
+- Logging - Writer monad
+- Side Effects - IO monad
+- State handling - State monad
+- Iterable - List monad
 - Many others ...
 
 #### Either Monad
@@ -147,7 +147,7 @@ Monads work with a type in a context, where context is a generic container that 
 - The context matters, is semantic, gives some form of quality to the underlying type.
 
 <p align="center">
-  <img width="25%" src="./img/monad-wrapper.png">
+  <img width="25%" src="./img/monad-container.png">
 </p>
 
 And here a very basic implementation:
