@@ -418,7 +418,7 @@ Therefore, we are applying a fn that not just transform the value, it wraps into
 </p>
 
 
-Guess what,`flatmap` fixes this, because it expects a function that returns another contained value, fixing mess for you:
+Guess what,`flatmap` fixes this, because it expects a function that returns another contained value, fixing the mess for you:
 
 ```kotlin
 sealed class Either<out A, out B> {
