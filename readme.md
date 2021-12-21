@@ -45,7 +45,7 @@ of values.
 
 Is a functional programming paradigm where programs are made composing functions.
 
-Functional Programming is based in [λ-calculus](https://en.wikipedia.org/wiki/Lambda_calculus) (compose and transform)
+Functional Programming is based on [λ-calculus](https://en.wikipedia.org/wiki/Lambda_calculus) (compose and transform)
 instead of Imperative Programming, which is based in [Von Neumann](https://www2.seas.gwu.edu/~rhyspj/spring11cs3221/lab6/lab61.html#:~:text=Such%20languages%20are%20called%20von,be%20calculated%20by%20the%20CPU.) (mutate state).
 
 Related concepts:
@@ -226,13 +226,12 @@ What??? Easy, easy, **calm down** mathematicians and functional programming expe
 
 Sadly, we can not explain monads without explain another pattern, the Functor.
 
-Basically, a functor is a type that have a mapped over with basically one function:
-
-`fmap: f a -> (a -> b) -> f b` also known as `map`
+Basically, a functor is a container that holds a value and allows us to map over it with one function called `fmap` or `map`:
 
 <p align="center">
-  <img width="50%" src="img/map-diagram.png">
+  <img width="50%" src="img/map.png">
 </p>
+
 
 > Functor? fmap? Do I have an arrogant haskeller face?
 
@@ -250,6 +249,13 @@ understand a functor as:
 
 - A parametric type
 - Has a ~`map` function to change the inner value type `A` passing a lambda `(A -> B)`
+
+Possible simple implementation in kotlin using an interface:
+```kotlin
+interface Functor<out A> {
+    fun <B> map(fn: (A) -> B) : Functor<B>
+}
+```
 
 > Interesting, I was using functors without knowing it ... 🤦‍
 > But why this is related to monads?
@@ -332,20 +338,16 @@ Good! Kid, you are sharp, I'll give you that. The next section is going to fix t
 
 Monads define two functions:
 
-- One to wrap a value in a monad:
-
-  `return:  a -> m a` also called `unit`
+- One to wrap a value in a monad (the container), called `return` or `unit`:
 
 <p align="center">
-  <img width="30%" src="img/unit-diagram.png">
+  <img width="30%" src="img/unit.png">
 </p>
 
-- Another to compose together functions that output monads:
-
-  `bind : m a -> (a -> m b) -> m b` also known as `flatmap`
+- Another, known as `bind` or `flatmap`, to apply a function to the contained value that outputs another monad:
 
 <p align="center">
-  <img width="50%" src="img/flatmap-diagram.png">
+  <img width="50%" src="img/flatmap.png">
 </p>
 
 > What the f****? Please, why I would even need these functions? explain this before I leave!
@@ -409,14 +411,14 @@ Remember `map` is a function that maps type `A` to type `B`, in our case, the fu
 - `A`: BigDecimal type
 - `B`: Either<NegativeAmount, Account>
 
-We are applying a fn that wraps into a context to an already wrapped context.
+Therefore, we are applying a fn that not just transform the value, it wraps into a context to an already wrapped context.
 
 <p align="center">
   <img width="50%" src="img/map-inception-diagram.png">
 </p>
 
 
-Guess what,`flatmap` fixes this, because it expects a function that wraps again, fixing the wrap mess for you:
+Guess what,`flatmap` fixes this, because it expects a function that returns another contained value, fixing mess for you:
 
 ```kotlin
 sealed class Either<out A, out B> {
