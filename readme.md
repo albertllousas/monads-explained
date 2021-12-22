@@ -149,7 +149,7 @@ Monads work with a type in a context, where context is a generic container that 
   <img width="25%" src="./img/monad-container.png">
 </p>
 
-And here a very basic implementation:
+And here a very basic implementation of either monad:
 
 ```kotlin
 sealed class Either<out A, out B> {
@@ -350,7 +350,7 @@ Monads define two functions:
   <img width="50%" src="img/flatmap.png">
 </p>
 
-> What the f****? Please, why I would even need these functions? explain this before I leave!
+> What the f***? Please, why I would even need these functions? explain this before I leave!
 
 Take it easy, I am going to do it
 
@@ -444,7 +444,7 @@ val account: Either<NegativeAmount, Account> = Account.create(100.toBigDecimal()
 ```
 
 It is a simple thing, but it took me a while to get it, **`bind~flatmap` is the most important function to understand**,
-once you get it, you can use monads without struggling and guessing types.
+once you get it, **you can use any monad** without struggling and guessing types.
 
 > Ok, any tip? suggestion?
 
