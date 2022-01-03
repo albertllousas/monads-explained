@@ -2,8 +2,8 @@
 
 Monads, I don't know if you heard about them, if not please keep reading, if yes, please don't give up and keep reading as well.
 
-The term 'monad' itself is weird but if you google it is even worse, you will be overflowed by a lot of cryptic blogs of 
-functional programming trying to explain them or just being arrogant to show how smart-asses they are and how stupid you are.
+The concept of “monad” itself is weird and hard, try to google it, you will find yourself overflowed by a lot of cryptic blogs of 
+functional programming trying to explain them, almost all of them making it even worse.
 
 Well, this is just another one, the difference, I am not a functional expert, just a simple engineer trying to make the 
 suffering less painful when it comes to monads. 
