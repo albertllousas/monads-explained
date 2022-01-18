@@ -8,7 +8,7 @@ functional programming trying to explain them, almost all of them making it even
 Well, this is just another one, the difference, I am not a functional expert, just a simple engineer trying to make the 
 suffering less painful when it comes to monads. 
 
-Why I am doing this? During my career I've been always trying to keep-up to date but also learn new things, and one of them 
+Why am I doing this? During my career I've been always trying to keep-up to date but also learn new things, and one of them 
 was functional programming, and trust me, when you try to learn it there is a point that you face this scary term, yes, monads.
 First reaction? Cool a new thing with a cool name... (after some minutes) ... mmmh, this is abstract ... (after some hours) ... 
 this is really hard ... (after weeks) ... I think I am getting it ... (after months) ... Ok, let's start over.
@@ -66,11 +66,11 @@ FP adds a different way of thinking about problem-solving.
 
 > I had enough, please, explain the topic
 
-One thing more before jump into monads: Let's use a real and practical problem to guide us through.
+One more thing before jumping into monads: Let's use a real and practical problem to guide us through.
 
 ## The Bank Account
 
-Let's pick up a real and easy problem that will help us to explain the concept along the exercise in a practical way.
+Let's pick a real and easy problem that will help us to explain the concept along with the exercise in a practical way.
 
 We are going to use the simplest bank account implementation that we can use for the sake of explaining the monads
 (a real bank account would be far more complex)
@@ -93,10 +93,10 @@ There is a lot of discussions and strong opinions around this topic over the net
   boundary of you program.
 - Is it an error that you control? Then use another error handling mechanism.
 
-> Why would be bad to use exceptions for my own errors?
+> Why would it be bad to use exceptions for my own errors?
 
-- In almost all the languages exceptions hide non-happy case flows, you can not type them in the function signatures,
-  therefore, from client perspective you can not even notice and deal properly with them.
+- In almost all the languages exceptions hide non-happy case flows, you can not type them in the function signatures.
+  Therefore, from a client perspective you can not even notice and deal properly with them.
 - Using exceptions you are not forced to face your own errors, you can easily let it crash, delegating the control of
   the flow to someone else.
 - They can be expensive in terms of performance.
@@ -224,7 +224,7 @@ Well:
 
 What??? Easy, easy, **calm down** mathematicians and functional programming experts!!
 
-Sadly, we can not explain monads without explain another pattern, the Functor.
+Sadly, we can not explain monads without explaining another pattern, the Functor.
 
 Basically, a functor is a container that holds a value and allows us to map over it with one function called `fmap` or `map`:
 
@@ -258,12 +258,12 @@ interface Functor<out A> {
 ```
 
 > Interesting, I was using functors without knowing it ... 🤦‍
-> But why this is related to monads?
+> But why is this related to monads?
 
 **A Monad is also a functor** and from client perspective, a monad **without a map function is not the most useful
 construct**.
 
-> Why I would need this with our Account?
+> Why would I need this with our Account?
 
 #### Deposit money into the bank account
 
@@ -296,7 +296,7 @@ when (account) {
 }
 ```
 
-> Come on, this is worse than my beautiful-imperative code! What I have to do now? Throw an exception? And, what is all this boilerplate code?
+> Come on, this is worse than my beautiful-imperative code! What do I have to do now? Throw an exception? And, what is all this boilerplate code?
 
 Wait again, `map` to the rescue!
 
@@ -395,7 +395,7 @@ val account = Account.create(100.toBigDecimal())
 
 And the tricky question. Could you tell me the type inferred into the val account?
 
-> Mmmm, I guess is ... Either<NegativeAmount, Account>?
+> Mmmm, I guess it is ... Either<NegativeAmount, Account>?
 
 Nope, the type is:
 
@@ -411,7 +411,7 @@ Remember `map` is a function that maps type `A` to type `B`, in our case, the fu
 - `A`: BigDecimal type
 - `B`: Either<NegativeAmount, Account>
 
-Therefore, we are applying a fn that not just transform the value, it wraps into a context to an already wrapped context.
+Therefore, we are applying a fn that not just transforms the value, it wraps into a context to an already wrapped context.
 
 <p align="center">
   <img width="50%" src="img/map-inception-diagram.png">
