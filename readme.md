@@ -248,9 +248,9 @@ Don't think in abstractions, supertypes or interfaces ... the implementation dif
 understand a functor as:
 
 - A parametric type
-- Has a ~`map` function to change the inner value type `A` passing a lambda `(A -> B)`
+- A ~`map` function to change the inner value type `A` passing a lambda `(A -> B)`
 
-Possible simple implementation in kotlin using an interface:
+Possible implementations in kotlin:
 ```kotlin
 interface Functor<out A> {
     fun <B> map(fn: (A) -> B) : Functor<B>
@@ -569,4 +569,4 @@ A recap, what is a Monad for an imperative mind?
 - **A monad is a type in a context**, it wraps a type meaningfully.
 - **"A monad can be mapped over"**, implements in one way or another the `map` function
 - **A Monad is a couple of functions**, `unit` and `flatmap`
-- **A Monad is a Workflow/Computation builder**, you can compose, chain and combine to create a business flow.
+- **A Monad is a Workflow/Computation builder**, you can compose, chain and combine them to create a business flow.
